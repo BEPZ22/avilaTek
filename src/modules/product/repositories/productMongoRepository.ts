@@ -42,10 +42,6 @@ export class ProductMongoRepository {
                 query.stock = filter.stock;
             }
 
-            if(filter.price){
-                query.price = filter.price;
-            }
-
             if(filter.active !== undefined){
                 query.active = filter.active;
             }else{
@@ -87,7 +83,7 @@ export class ProductMongoRepository {
 
     async delete(id: string): Promise<void>{
         await ProductModel.updateOne(
-            { _id: id},
+            { _id: id },
             {
                 active: false
             }

@@ -5,5 +5,4 @@ export interface updateProductDTO{
     stock?: number;
     description?: string;
     price?: string;
-    active?: boolean;
 }

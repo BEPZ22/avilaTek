@@ -8,7 +8,7 @@ interface ProductToPersistance {
   sku: string;
   stock: number;
   description: string;
-  price: string;
+  price: number;
   active: boolean;
   createdAt: Date;
   updatedAt: Date;

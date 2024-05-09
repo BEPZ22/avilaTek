@@ -27,7 +27,6 @@ export class UpdateProductUseCase {
         const stock = req.stock;
         const description = req.description;
         const price = req.price;
-        const active = req.active;
 
         if (!id){
             return wrong(
@@ -52,7 +51,6 @@ export class UpdateProductUseCase {
             stock: stock || product.stock,
             description: description || product.description,
             price: price || product.price,
-            active: active !== undefined ? active : product.active,
             updatedAt: new Date()
         } as ProductToPersistance;
         

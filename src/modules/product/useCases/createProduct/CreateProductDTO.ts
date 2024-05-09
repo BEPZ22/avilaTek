@@ -3,5 +3,5 @@ export interface createProductDTO{
     sku: string;
     stock: number;
     description: string;
-    price: string;
+    price: number;
 }

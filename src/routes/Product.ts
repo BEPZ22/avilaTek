@@ -22,6 +22,16 @@ import {
     updateProductUseCase
 } from '../modules/product/useCases/updateProduct';
 
+import {
+    ListProductsController,
+    listProductsUseCase
+} from '../modules/product/useCases/listProducts';
+
+import {
+    BulkDeleteProductsController,
+    bulkDeleteProductsUseCase
+} from '../modules/product/useCases/bulkDelete';
+
 ProductRouter.post(
     '/',
     authGuard,
@@ -40,11 +50,29 @@ ProductRouter.put(
       }
 );
 
+ProductRouter.delete(
+    '/',
+    authGuard,
+	(req: Request, res: Response) => {
+        const controller = new BulkDeleteProductsController(bulkDeleteProductsUseCase);
+        controller.execute(req, res);
+      }
+);
+
 ProductRouter.get(
     '/:id',
     authGuard,
 	(req: Request, res: Response) => {
         const controller = new FindProductByIdController(findProductByIdUseCase);
+        controller.execute(req, res);
+      }
+);
+
+ProductRouter.get(
+    '/',
+    authGuard,
+	(req: Request, res: Response) => {
+        const controller = new ListProductsController(listProductsUseCase);
         controller.execute(req, res);
       }
 );

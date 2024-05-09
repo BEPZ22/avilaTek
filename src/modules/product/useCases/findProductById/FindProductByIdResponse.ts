@@ -3,7 +3,7 @@ export interface findProductByIdResponse{
     sku: string;
     stock: number;
     description: string;
-    price: string;
+    price: number;
     active: boolean;
     createdAt: Date;
 }
