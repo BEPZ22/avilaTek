@@ -10,6 +10,8 @@ interface UserToPersistance {
   email: string;
   password: string;
   phone: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 interface UserDocument extends Document, UserToPersistance {}
@@ -27,6 +29,8 @@ const loadUserModel = (): void => {
         email: SchemaTypes.String,
         password: SchemaTypes.String,
         phone: SchemaTypes.String,
+        createdAt: SchemaTypes.Date,
+        updatedAt: SchemaTypes.Date
     },
     { collection: 'User' }
   );
