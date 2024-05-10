@@ -13,8 +13,8 @@ export class HistoryRetailByUserController extends HttpController{
 
     public async executeImpl():Promise<any>{
         
-        this.req.body.currentPage = this.req.params.currentPage;
-        this.req.body.perPage = this.req.params.perPage;
+        this.req.body.currentPage = this.req.query.currentPage;
+        this.req.body.perPage = this.req.query.perPage;
         
         const dto = this.req.body as historyRetailByUserDTO;
         

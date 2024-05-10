@@ -19,7 +19,6 @@ export class RetailMongoRepository {
     async find(filters: Filters): Promise<RetailDocument[] | []> {
         const filter = filters.filters;
         const pagination = filters.pagination;
-
         const query: { [key: string]: any } = {};
 
         const populate = {
@@ -46,9 +45,10 @@ export class RetailMongoRepository {
             const limit = pagination?.perPage ? pagination.perPage : 10;
             const options = {
                 page,
-                limit
+                limit,
+                populate
             }
-            query.populate = populate;
+
             return (await RetailModel.paginate(query, options)).docs;
         }
 
