@@ -20,6 +20,18 @@ export class ProductMongoRepository {
         return await ProductModel.findById(id);
     }
 
+    async findByIds(ids: string[]): Promise<ProductDocument[] | []>{
+        return await ProductModel
+            .find({
+                $and: [
+                    { _id: { $in: ids } },
+                    { active: true }
+                ]
+                
+            })
+            .select({_id: 1, stock: 1, price: 1, name: 1})
+    }
+
     async find(filters: Filters): Promise<ProductDocument[] | []> {
         const filter = filters.filters;
         const pagination = filters.pagination;

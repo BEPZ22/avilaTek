@@ -20,6 +20,7 @@ import {
     RefreshTokenController,
     refreshTokenUseCase
 } from '../modules/authentication/useCases/refreshToken';
+
 export const AuthRouter = Router();
 
 

@@ -15,7 +15,6 @@ import {
     FindProductByIdController,
     findProductByIdUseCase
 } from '../modules/product/useCases/findProductById';
-export const ProductRouter = Router();
 
 import {
     UpdateProductController,
@@ -31,6 +30,8 @@ import {
     BulkDeleteProductsController,
     bulkDeleteProductsUseCase
 } from '../modules/product/useCases/bulkDelete';
+
+export const ProductRouter = Router();
 
 ProductRouter.post(
     '/',
