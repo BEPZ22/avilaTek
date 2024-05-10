@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "7d2e6a1f-27cb-497a-b5cc-8ce9ca8b1177",
+		"name": "AvilaTekTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5912612",
+		"_collection_link": "https://growthroad.postman.co/workspace/Team-Workspace~cda0b5bf-4e39-47fc-8902-7ef158fcf170/collection/5912612-7d2e6a1f-27cb-497a-b5cc-8ce9ca8b1177?action=share&source=collection_link&creator=5912612"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"yayaju@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/auth/login",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUxNjc0NTl9.Y3mCDgr6EUWMIciMN-OkxoG70zkJc2aXUsb62OrLsfA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"694d3fc5ccc9395fff79f286f1da641f89bc7fb47ebac96de9cdca117085e50e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/auth/refresh/session",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"auth",
+								"refresh",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Aldeide\",\r\n    \"lastName\": \"Sanchez\",\r\n    \"documentId\": \"29546987\",\r\n    \"email\": \"yayaju@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"04242545068\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/auth/register",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retail",
+			"item": [
+				{
+					"name": "Create Retail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": [\r\n        {\r\n            \"productId\": \"663c3db3b3928b24334d4bae\",\r\n            \"productQty\": 2\r\n        },\r\n                {\r\n            \"productId\": \"663c4769e7d5085517423ef2\",\r\n            \"productQty\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/retail/",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"retail",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "History Retail By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BH}}/retail/user?currentPage=1&perPage=1",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"retail",
+								"user"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Chocolate2\",\r\n    \"sku\": \"SLKSDDF123\",\r\n    \"stock\": 40,\r\n    \"description\": \"Chococalte negro\",\r\n    \"price\": 5.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/product/",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BH}}/product/:id",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "663c3db3b3928b24334d4bae",
+									"uuid": "90c87914-0305-4461-980e-fafbc9a998b7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"663c4769e7d5085517423ef2\",\r\n    \"name\": \"Chocolatito2\",\r\n    \"sku\": \"1234\",\r\n    \"stock\": 50,\r\n    \"price\": 5.6,\r\n    \"active\": false\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/product/",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BH}}/product/?currentPage=2&perPage=1",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "2"
+								},
+								{
+									"key": "perPage",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "Chocolatito",
+									"disabled": true
+								},
+								{
+									"key": "sku",
+									"value": "1234",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "5.6",
+									"disabled": true
+								},
+								{
+									"key": "active",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNiNjBkNjIyZTE2MTBjMzJmMmEyM2YiLCJ1c2VyRmlyc3ROYW1lIjoiQWxkZWlkZSIsInVzZXJMYXN0TmFtZSI6IlNhbmNoZXoiLCJpYXQiOjE3MTUyMjM5MTh9.GPcJs6549Ruyc7O4B9w06aj3BLEG11dSctUUydwwSgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n        \"663c3db3b3928b24334d4bae\",\r\n        \"663c4769e7d5085517423ef2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BH}}/product/",
+							"host": [
+								"{{URL_BH}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
